@@ -19,6 +19,13 @@ describe User do
     ).should be_kind_of User
   end
   
+  it "should not be able to log in with an incorrect p/w" do 
+    user.save
+    expect ( 
+      user.try(:authenticate, "password") 
+    ).should be_false
+  end
+
 end
 
 
