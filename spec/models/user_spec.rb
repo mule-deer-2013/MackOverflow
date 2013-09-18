@@ -11,6 +11,13 @@ describe User do
     User.last.username.should eq "Test User"
   end
 
-  it "should be able to log in"
+  it "should be able to log in" do 
+    pending
+  end
+
 
 end
+
+
+
+
