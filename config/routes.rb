@@ -16,6 +16,7 @@ MackOverflow::Application.routes.draw do
     resources :answers, :only => [:show]
   end
 
+  post '/questions/:id/answers', to: 'answers#create'
 
 
 end

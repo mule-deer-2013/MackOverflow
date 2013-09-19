@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= @question.content %>
+<h2><%= @question.content %></h2>
+
+
+
+<h1>Answer this question</h1>
+
+<%= form_for(:answer, url: "/questions/#{@question.id}/answers") do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "Answer!" %>
+<% end %>
