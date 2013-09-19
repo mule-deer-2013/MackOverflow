@@ -31,11 +31,3 @@ class UsersController < ApplicationController
 
 end
 
-
-# User.new(params)
-
-# name = 'username' name = 'password'
-# User.new(username: params[:username], password: params[:password])
-
-# name = user[:username] name user[:psasword]
-# User.new(params[:user])

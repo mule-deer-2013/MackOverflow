@@ -1,5 +1,17 @@
 MackOverflow::Application.routes.draw do
 
+  resources :answers
+
+
+  resources :questions
+
+
+  resources :questionrs
+
+
+  resources :users
+
+
   resources :users, except: [:index]
   resources :questions
   resources :answers, except: [:index]
