@@ -1,4 +1,8 @@
 Welcome to MackOverflow!
 
 <%= link_to "Ask a Mack for help", new_question_path %>
-
+<ul>
+<% @questions.each do |question| %>
+	<li><%= link_to question.content, question %></li>
+<% end %>
+</ul>
