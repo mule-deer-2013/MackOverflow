@@ -26,6 +26,8 @@ describe User do
     ).should be_false
   end
 
+  
+
 end
 
 
