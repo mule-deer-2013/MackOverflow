@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  helper_method: :current_user, :logged_in?, :logout
+  helper_method :current_user, :logged_in?, :logout
 
   def current_user
     @current_user ||= User.find_by_id!(session[:user_id])
@@ -13,6 +13,4 @@ class ApplicationController < ActionController::Base
   def logout
     session.clear
   end
-
-
 end
