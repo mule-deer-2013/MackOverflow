@@ -4,8 +4,11 @@
 
 #### Todo
  - More Rspec tests
- - Capybara Testing
  - Complete Controllers
+ - Capybara Testing
  - Add a User page where one can see all of their Q&As
- - Incorporate Gravatar
- 
+ - Add emails to User migration
+ - Add gravatar
+ - Add Polymorphic Votes table (http://i.imgur.com/2WGSshj.png)
+ - Use Foundation
+ - Pretty much finish the whole fucking thing...
