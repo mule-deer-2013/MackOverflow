@@ -4,11 +4,9 @@ MackOverflow::Application.routes.draw do
 
   resources :questions, except: [:edit]
 
-
   resources :users, except: [:index]
 
   resources :answers, except: [:index]
-
 
   resources :users do 
     resources :questions, :only => [:show]
