@@ -24,3 +24,7 @@ class QuestionsController < ApplicationController
 
 
 end
+
+
+
+
