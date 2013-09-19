@@ -4,6 +4,6 @@ MackOverflow::Application.routes.draw do
   resources :questions
   resources :answers, except: [:index]
 
- root :to => 'question#index'
+ root :to => 'questions#index'
 
 end
