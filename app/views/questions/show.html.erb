@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<h2> Question: <%= @question.content %></h2>
+
+<% @answers.each do |answer| %>
+	<p><strong> Answer </strong>: <%= answer.content %> </p>
+<% end %>
+
+<h4>Answer this question</h4>
+
+<%= form_for(:answer, url: "/questions/#{@question.id}/answers") do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "Answer!" %>
+<% end %>
