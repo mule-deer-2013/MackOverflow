@@ -1,19 +1,12 @@
 MackOverflow::Application.routes.draw do
 
-  resources :answers
+ root :to => 'questions#index'
 
-
-  resources :questions
-
-
-  resources :questionrs
-
-
-  resources :users
+  resources :questions, except: [:edit]
 
 
   resources :users, except: [:index]
-  resources :questions
+
   resources :answers, except: [:index]
 
 
@@ -25,6 +18,6 @@ MackOverflow::Application.routes.draw do
     resources :answers, :only => [:show]
   end
 
- root :to => 'question#index'
+
 
 end
