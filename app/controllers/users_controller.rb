@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     p params
     @user= User.new(params[:user])
     if @user.save
+      login(@user)
       redirect_to @user
     else
       flash[:notice] = @user.errors.full_messages  
