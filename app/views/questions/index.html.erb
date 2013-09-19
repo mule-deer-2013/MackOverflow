@@ -4,8 +4,6 @@ Welcome to MackOverflow!
   <%= link_to "Sign Up!", new_user_path %>
 </div>
 
-<%= link_to "Ask a Mack for help", new_question_path %>
-<ul>
 <% @questions.each do |question| %>
 	<li><%= link_to question.content, question %></li>
 <% end %>
