@@ -1,6 +1,6 @@
 MackOverflow::Application.routes.draw do
 
- root :to => 'questions#index'
+ root :to => 'questions#index'  # We suggest to create a root to point to the sign in/create account page instead of having it pointing to questions#index
 
   resources :questions, except: [:edit]
 

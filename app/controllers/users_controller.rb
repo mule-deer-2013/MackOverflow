@@ -1,25 +1,27 @@
 class UsersController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
-    @questions = @user.questions.all
-    @answers = @user.answers.all
+  def new
+    @user = User.new
   end
 
   def create
     p params
     @user= User.new(params)
     if @user.save
-      redirect_to user_path  
+      redirect_to @user
     else
       flash[:notice] = @user.errors.full_messages  
-      redirect_to root_path 
+      redirect_to new_user_path 
     end   
   end
 
-  def new
-    #create users/new.html.erb
+  def show
+    @user = User.find(params[:id])
+    @questions = @user.questions.all
+    @answers = @user.answers.all
   end
+
+
 
   # def edit
     
