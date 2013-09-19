@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?, :login, :logout
 
   def current_user
-    @current_user ||= User.find_by_id!(session[:user_id])
+    @current_user ||= User.find_by_id(session[:user_id])
   end
 
   def logged_in?
@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   def logout
     session.clear
     flash[:notice] = "You have successfully logged out."
-    redirect_to root_url
+    #redirect_to root_url
 
   end
 end
