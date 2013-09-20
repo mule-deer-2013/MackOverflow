@@ -5,6 +5,29 @@ Welcome to MackOverflow!
 </div>
 
 <% @questions.each do |question| %>
-	<li><%= link_to question.content, question %></li>
-<% end %>
-</ul>
+
+	<div class="question">
+
+<% render "vote_box" %>
+
+    <%= link_to question.content, question %>
+    </div>
+  <% end %>
+
+
+<div class="answer_box">
+  
+  <div class="upvote">
+    <img src="app/assets/images/upvote.png">
+  </div>  
+
+  <div class="rating">
+    
+  </div>
+
+  <div class="downvote">
+    <img src="downvote.png">
+  </div>
+
+</div>  
+
