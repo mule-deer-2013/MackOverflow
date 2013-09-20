@@ -8,7 +8,7 @@ Welcome to MackOverflow!
 
 	<div class="question">
 
-<%= render "vote_box" %>
+<%= render partial: "vote_box", locals: {:question => question} %>
 
     <%= link_to question.content, question %>
     </div>

@@ -22,5 +22,6 @@ MackOverflow::Application.routes.draw do
 
   post '/questions/:id/answers', to: 'answers#create'
 
+  post '/votes/create'
 
 end
