@@ -7,11 +7,9 @@ class Question < ActiveRecord::Base
 
 
   def set_rating(arrow_click)
-    if arrow_click == true
-      self.rating += 1
-    elsif arrow_click == false
-      self.rating -= 1
-    end
+
+    arrow_click ? self.rating += 1 : self.rating -= 1
+
   end
 
 end
