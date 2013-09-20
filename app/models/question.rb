@@ -6,10 +6,5 @@ class Question < ActiveRecord::Base
   validates_presence_of :content
 
 
-  def set_rating(arrow_click)
-
-    arrow_click ? self.rating += 1 : self.rating -= 1
-
-  end
 
 end

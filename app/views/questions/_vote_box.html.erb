@@ -1,14 +1,16 @@
 <div class="answer_box">
   
-  <div class="upvote">
+
+  <div class="upvote" id="<%= question.id %>">
     <img style = "width: 25px" src="assets/upvote.png">
   </div>  
 
   <div class="rating">
     <%= question.rating %>
+    
   </div>
 
-  <div class="downvote">
+  <div class="downvote" id="<%= question.id %>">
     <img style = "width: 25px" src="assets/downvote.png">
   </div>
 
