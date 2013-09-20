@@ -1,21 +1,16 @@
 MackOverflow::Application.routes.draw do
 
-  resources :answers
+  root :to => 'questions#index'  # We suggest to create a root to point to the sign in/create account page instead of having it pointing to questions#index
 
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy'
 
-  resources :questions
-
-
-  resources :questionrs
-
-
-  resources :users
-
+  resources :questions, except: [:edit]
 
   resources :users, except: [:index]
-  resources :questions
-  resources :answers, except: [:index]
 
+  resources :answers, except: [:index]
 
   resources :users do 
     resources :questions, :only => [:show]
@@ -25,6 +20,7 @@ MackOverflow::Application.routes.draw do
     resources :answers, :only => [:show]
   end
 
- root :to => 'question#index'
+  post '/questions/:id/answers', to: 'answers#create'
+
 
 end

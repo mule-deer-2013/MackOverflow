@@ -1,0 +1,13 @@
+<header>
+	<nav>
+		<ul>
+			<li><%= link_to "Home", root_path %></li>
+			<% if logged_in? %>
+				<li><%= link_to "Sign out", signout_path, method: "delete" %>
+					<li><%= link_to "Ask a Mack for help", new_question_path %></li>
+			<% else %>
+				<li><%= link_to "Sign in", signin_path %></li>
+			<% end %>
+		</ul>
+	</nav>
+</header>
