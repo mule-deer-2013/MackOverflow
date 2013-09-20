@@ -8,7 +8,7 @@ var increaseRating = function(){
   $.ajax({
     url: '/votes/create',
     type: 'post',
-    data: $({ "questionId" : questionId, "vote" : false }).serialize()
+    data: JSON.stringify({questionId : questionId, vote : false })
 
   })
 }
@@ -20,7 +20,7 @@ var decreaseRating = function(){
   $.ajax({
     url: '/votes/create',
     type: 'post',
-    data: $({ "questionId" : questionId, "vote" : false }).serialize()
+    data: JSON.stringify({questionId : questionId, vote : true })
 
   })
 }
