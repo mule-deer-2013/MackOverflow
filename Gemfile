@@ -30,6 +30,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'
