@@ -63,12 +63,4 @@ describe UsersController  do
       expect(assigns(:answers)).to eq christian.answers
     end
   end
-
-
-
-
-
-
-
-
 end

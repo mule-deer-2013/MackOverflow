@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+<h3>Your posted questions:</h3>
+<% @questions.each do |question| %>
+  <h5><%= question.content %> (:Karma:) <%= question.rating %></h5>
+<% end %>
+<h3>Your posted answers:</h3>
+<% @answers.each do |answer| %>
+  <h5><%= answer.content %> (:Karma:) <%= answer.rating %></h5>
+<% end %>
+
+
 
 <!-- We suggest to delete the edit link unless you are trying to edit user's password????????? -->
 <%= link_to 'Edit', edit_user_path(@user) %> |

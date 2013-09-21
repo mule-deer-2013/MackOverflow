@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :content, :rating, :user_id
   belongs_to :user
   has_many :answers
 
