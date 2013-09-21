@@ -11,3 +11,22 @@
  *= require_self
  *= require_tree .
  */
+
+
+.answer_box {
+  float: left;
+  clear: left;
+}
+
+.question {
+  height: 75px;
+  margin: 0 0 15px 15px;
+
+}
+
+.qtitle {
+  font-size: 20px;
+  margin-left: 35px;
+  padding-top: 5px;
+
+}

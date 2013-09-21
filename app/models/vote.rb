@@ -7,7 +7,6 @@ class Vote < ActiveRecord::Base
   belongs_to :votable, polymorphic: true
   before_save :update_count
 
-
   def update_count
     self.votable.set_rating
   end
