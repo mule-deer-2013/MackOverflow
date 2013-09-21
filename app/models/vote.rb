@@ -2,6 +2,7 @@ class Vote < ActiveRecord::Base
 
   attr_accessible :is_upvote, :votable_id, :votable_type, :user_id
   validate :only_vote
+  validates :user_id, presence: true
 
   belongs_to :user
   belongs_to :question
