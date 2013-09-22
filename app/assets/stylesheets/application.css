@@ -35,6 +35,12 @@ body {
   background-color: #eee !important;
 }
 
+#welcome {
+  font-family: 'Sansita One';
+  font-size: 120px;
+  text-align: center
+}
+
 .answer_box {
   float: left;
   clear: left;
@@ -59,6 +65,13 @@ body {
   box-shadow: 5px 5px 20px #ccc
 }
 
+.answer {
+  padding: 5px;
+  border: solid 1px #ccc;
+  margin-bottom: 15px;
+  background-color: #fefefe;
+}
+
 .author {
   margin: 50px 0 0 15px;
   font-size: x-small; 
@@ -67,4 +80,16 @@ body {
 .rating {
   text-align: center;
   margin-bottom: 2px
+}
+
+.answer_container {
+  border: solid 3px white;
+  width: 70%;
+  padding: 10px;
+}
+
+.answer_text {
+  padding: 5px;
+  margin-left: 25px
+
 }
