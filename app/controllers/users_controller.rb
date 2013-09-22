@@ -23,9 +23,10 @@ class UsersController < ApplicationController
 
 
 
-  # def edit
-    
-  # end
+  def edit
+    @answers =  Answer.new
+    @user = User.new
+  end
 
   # def update
     
