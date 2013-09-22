@@ -12,7 +12,8 @@
     <div class="answer_text">
       <%= answer.content %></p> 
     </div>
-     </div>  
+     <span class="author">Posted <%= distance_of_time_in_words(answer.user.created_at, answer.created_at) %> later</span>
+     </div>
   <% end %>
 </div>
 
