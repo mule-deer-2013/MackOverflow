@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
   attr_accessible :content, :rating, :user_id
+  validates :user_id, presence: true
 
   belongs_to :user
   has_many :answers
@@ -12,6 +13,5 @@ class Question < ActiveRecord::Base
     self.rating = upvote_count - downvote_count
     self.save
   end
-
 
 end

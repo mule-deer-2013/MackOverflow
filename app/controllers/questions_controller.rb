@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    @questions_sorted_by_popularity = Question.all.sort_by { |question| question.answers.count }.reverse
+    @questions = @questions_sorted_by_popularity.each
   end
 
   def new
@@ -14,6 +15,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(params[:question])
+    @question.user = current_user
     if @question.save
       redirect_to @question
     else

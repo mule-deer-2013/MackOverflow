@@ -3,15 +3,25 @@
 
 <h2> Question: <%= @question.content %></h2>
 
-<% @answers.each do |answer| %>
-	<p><strong> Answer </strong>: <%= answer.content %></p> 
-<% end %>
+<div class="answer_container">
+<h3>Answers</h3>
+  <% @answers.each do |answer| %>
+  	<div class="answer">
+
+    <%= render partial: "vote_box", locals: {:votable => answer} %>
+    <div class="answer_text">
+      <%= answer.content %></p> 
+    </div>
+     <span class="author">Posted <%= time_ago_in_words(answer.created_at) %> ago</span>
+     </div>
+  <% end %>
+</div>
+
 
 <h4>Answer this question</h4>
 
 <%= form_for(:answer, url: "/questions/#{@question.id}/answers") do |f| %>
 
-  <%= f.label :content %>
   <%= f.text_field :content %>
 
   <%= f.submit "Answer!" %>

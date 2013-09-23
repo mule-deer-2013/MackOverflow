@@ -1,21 +1,21 @@
-Welcome to MackOverflow!
-
-<div>
-  <%= link_to "Sign Up!", new_user_path %>
-</div>
 
 
+
+<div id="welcome">MackOverflow</div>
+
+<div class="question_container">
 <% @questions.each do |question| %>
 
 	<div class="question">
 
-    <%= render partial: "vote_box", locals: {:question => question} %>
+    <%= render partial: "vote_box", locals: {:votable => question} %>
     <div class="qtitle">
       <%= link_to question.content, question %>
     </div>
+    <span class="author"> Author: <%= link_to question.user.username, question.user %></span>
+    <span class="author">Posted <%= time_ago_in_words(question.created_at) %> ago</span>
+
   </div>
 
 <% end %>
-
-
-
+</div>

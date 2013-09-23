@@ -4,12 +4,14 @@ var set_listeners = function(){
 }
 
 var increaseRating = function(e){
-  var questionId = $(this).attr('id')
+  var objectID = $(this).attr('id')
+  var votableType = $(this).parent().parent().attr('class')
+
   $.ajax({
     url: '/votes/create',
     type: 'post',
     dataType: 'json',
-    data: { questionId: questionId, vote: true }
+    data: { objectID: objectID, vote: true, votableType: votableType }
 
   })
   .done(function(response){
@@ -20,12 +22,14 @@ var increaseRating = function(e){
 
 
 var decreaseRating = function(e){
-  var questionId = $(this).attr('id')
+  var objectID = $(this).attr('id')
+  var votableType = $(this).parent().parent().attr('class')
+
   $.ajax({
     url: '/votes/create',
     type: 'post',
     dataType: 'json',
-    data: { questionId: questionId, vote: false }
+    data: { objectID: objectID, vote: true, votableType: votableType }
 
   })
   .done(function(response){
