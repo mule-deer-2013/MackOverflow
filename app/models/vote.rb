@@ -19,5 +19,5 @@ class Vote < ActiveRecord::Base
       errors.add(:vote, "You can only vote once per item")
     end
   end
-
+  
 end
