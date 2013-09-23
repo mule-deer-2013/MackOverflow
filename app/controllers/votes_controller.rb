@@ -10,8 +10,5 @@ class VotesController < ApplicationController
     q.rating
     render json: {value: q.rating}
   end
-
-
+  
 end
-
-
