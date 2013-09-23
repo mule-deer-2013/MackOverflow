@@ -2,6 +2,12 @@
 
 
 <h2> Question: <%= @question.content %></h2>
+<p>
+  Tags:
+  <% @question.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
 
 <div class="answer_container">
 <h3>Answers</h3>

@@ -24,5 +24,5 @@ MackOverflow::Application.routes.draw do
 
   post '/votes/create'
 
-
+  resources :tags
 end

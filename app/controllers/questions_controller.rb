@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(params[:question])
     @question.user = current_user
     if @question.save
-      redirect_to @question
+      redirect_to question_path(@question)
     else
       render 'new'
     end
@@ -31,4 +31,6 @@ end
 
 
 
-
+def question_params
+  params.require(:question).permit(:content, :tag_list)
+end
