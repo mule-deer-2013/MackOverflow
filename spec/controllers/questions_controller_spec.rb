@@ -23,8 +23,7 @@ describe QuestionsController do
     end
 
     it "assigns @question when logged in" do
-      # login(user)
-      session[:user_id] = user.id
+      logged_in_test user # doesn't work!
       expect(assigns(:question)).to be_a_new Question
     end
 
