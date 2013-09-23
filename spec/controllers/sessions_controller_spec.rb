@@ -7,7 +7,7 @@ describe SessionsController do
   describe "loggin in with valid user params" do
     it "should redirect to user path" do
       visit signin_path
-      page.should have_content("Sign in")
+      page.inspect
       # fill_in 'Username', :with => "tlands"
       # fill_in 'Password', :with => "123notit"
       # click_button 'Sign In'
