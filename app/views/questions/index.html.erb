@@ -13,7 +13,7 @@
       <%= link_to question.content, question %>
     </div>
     <span class="author"> Author: <%= link_to question.user.username, question.user %></span>
-    <span class="author">Posted <%= distance_of_time_in_words(question.user.created_at, question.created_at) %> later</span>
+    <span class="author">Posted <%= time_ago_in_words(question.created_at) %> ago</span>
 
   </div>
 

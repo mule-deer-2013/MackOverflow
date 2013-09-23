@@ -12,11 +12,10 @@
     <div class="answer_text">
       <%= answer.content %></p> 
     </div>
-     <span class="author">Posted <%= distance_of_time_in_words(answer.user.created_at, answer.created_at) %> later</span>
+     <span class="author">Posted <%= time_ago_in_words(answer.created_at) %> ago</span>
      </div>
   <% end %>
 </div>
-
 
 
 <h4>Answer this question</h4>
