@@ -21,6 +21,7 @@ group :doc do
 end
 
 group :development do
+  gem 'debugger'
   gem 'annotate', '2.5.0'
 end
 
