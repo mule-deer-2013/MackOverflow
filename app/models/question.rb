@@ -8,10 +8,12 @@ class Question < ActiveRecord::Base
   validates_presence_of :content
 
   def set_rating
-    upvote_count = self.votes.where(:is_upvote => true).count
-    downvote_count = self.votes.where(:is_upvote => false).count
-    self.rating = upvote_count - downvote_count
-    self.save
+    q = self
+    upvote_count = q.votes.where(:is_upvote => true).count
+    downvote_count = q.votes.where(:is_upvote => false).count
+    q.rating = upvote_count - downvote_count
+    q.save
+    p q.rating
   end
 
 end
