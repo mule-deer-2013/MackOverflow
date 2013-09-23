@@ -27,9 +27,11 @@ end
 
 group :test do
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'capybara', '1.1.2'
   gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'launchy'
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'

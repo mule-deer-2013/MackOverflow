@@ -27,8 +27,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers
   end
-
-
 end
 
 

@@ -1,16 +1,22 @@
 <p id="notice"><%= notice %></p>
-<h3>Your posted questions:</h3>
-<% @questions.each do |question| %>
-  <h5><%= question.content %> (:Karma:) <%= question.rating %></h5>
-  <%= link_to "Edit question", question_path %>
+<% if !@questions.empty? %>
+  <h3>Your posted questions:</h3>
+  <% @questions.each do |question| %>
+    <h5><%= question.content %> (:Karma:) <%= question.rating %></h5>
+    <%= link_to "Edit question", question_path %>
+  <% end %>
+<% else %>
+  <h4>You have not posted any questions yet!</h4>
 <% end %>
-<h3>Your posted answers:</h3>
-<% @answers.each do |answer| %>
-  <h5><%= answer.content %> (:Karma:) <%= answer.rating %></h5>
+<% if !@answers.empty? %>
+  <h3>Your posted answers:</h3>
+  <% @answers.each do |answer| %>
+    <h5><%= answer.content %> (:Karma:) <%= answer.rating %></h5>
+  <% end %>
+<% else %>
+  <h4>You have not posted any answers yet!</h4>
 <% end %>
 
 
 
-<!-- We suggest to delete the edit link unless you are trying to edit user's password????????? -->
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', root_path %>
