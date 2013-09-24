@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in?
-    current_user != nil
+    current_user.present?
   end
 
   def login(user)
@@ -17,6 +17,5 @@ class ApplicationController < ActionController::Base
   def logout
     session.clear
     flash[:notice] = "You have successfully logged out."
-    #redirect_to root_url
   end
 end

@@ -6,7 +6,7 @@ describe QuestionsController do
   describe 'GET index' do
     before {  get :index }
     it "assigns @questions" do
-      expect(assigns(:questions)).to eq Question.all
+      expect(assigns(:questions_sorted_by_popularity)).to eq Question.all.sort_by { |question| question.answers.count }.reverse
     end
 
     it "renders index template" do
@@ -15,20 +15,23 @@ describe QuestionsController do
   end
 
   describe 'GET new' do
-    let!(:user) { User.create(:username => "tlands",
+    let(:user) { User.create(:username => "tlands",
                               :password => "123notit")}
-    before { get :new }
+
     it "redirects if you're not signed in" do
+      get :new
       expect(response).to redirect_to root_path
     end
 
     it "assigns @question when logged in" do
-      logged_in_test user # doesn't work!
+      controller.stub(:current_user) { true }
+      get :new
       expect(assigns(:question)).to be_a_new Question
     end
 
     it "redirects if not logged in" do
-      expect(response).to redirect_to root_path
+      get :new
+      response.should redirect_to root_path
     end
   end
 end
