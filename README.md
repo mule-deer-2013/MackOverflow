@@ -11,4 +11,3 @@
  - Add gravatar
  - Add Polymorphic Votes table (http://i.imgur.com/2WGSshj.png)
  - Use Foundation
- - Pretty much finish the whole fucking thing...
